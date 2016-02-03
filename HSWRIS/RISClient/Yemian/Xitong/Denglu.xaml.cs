@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace RISClient.Yemian.Xitong
 {
@@ -23,6 +24,21 @@ namespace RISClient.Yemian.Xitong
         public Denglu()
         {
             InitializeComponent();
+        }
+
+        private async void dengluUIbutton_Click(object sender, RoutedEventArgs e)
+        {
+            using (Shujuku.Shujuku shujuku=new Shujuku.Shujuku())
+            {
+                if (shujuku.Yonghu.Where(z=>z.zhanghao.Equals(zhanghaoUItextBox.Text)&&z.mima.Equals(mimaUIpasswordBox.Password)).Count()==1)
+                {
+
+                }
+                else
+                {
+                    await DialogManager.ShowMessageAsync(this, "提示", "登录信息有误！");
+                }
+            }
         }
     }
 }

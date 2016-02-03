@@ -90,7 +90,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Migrations\201602030350500_jj.cs" />
+    <Compile Include="Migrations\201602030350500_jj.Designer.cs">
+      <DependentUpon>201602030350500_jj.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602030514272_fw.cs" />
+    <Compile Include="Migrations\201602030514272_fw.Designer.cs">
+      <DependentUpon>201602030514272_fw.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\Shujuku.cs" />
+    <Compile Include="Shujuku\Yonghu.cs" />
     <Compile Include="Yemian\Xitong\Denglu.xaml.cs">
       <DependentUpon>Denglu.xaml</DependentUpon>
     </Compile>
@@ -117,6 +127,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <EmbeddedResource Include="Migrations\201602030350500_jj.resx">
+      <DependentUpon>201602030350500_jj.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602030514272_fw.resx">
+      <DependentUpon>201602030514272_fw.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -132,9 +148,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Ziyuan\tubiao.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
       <Visible>False</Visible>
       <ProductName>Microsoft .NET Framework 4.5.2 %28x86 和 x64%29</ProductName>
@@ -145,6 +158,10 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Ziyuan\tubiao.ico" />
+    <Resource Include="Ziyuan\yinzhang.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

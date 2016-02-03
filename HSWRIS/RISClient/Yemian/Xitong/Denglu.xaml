@@ -6,9 +6,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RISClient.Yemian.Xitong"
         mc:Ignorable="d"
-        Title="HSWRIS" Height="300" Width="300" 
+        Title="HSWRIS" Height="262" Width="413" 
          WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Icon="/RISClient;component/Ziyuan/tubiao.ico">
     <Grid>
-        
+        <Label x:Name="label" Content="账号" HorizontalAlignment="Left" Margin="164,58,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="密码" HorizontalAlignment="Left" Margin="164,98,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="zhanghaoUItextBox" HorizontalAlignment="Left" Height="23" Margin="220,58,0,0" TextWrapping="Wrap" Text="kaifarenyuan" VerticalAlignment="Top" Width="120"/>
+        <PasswordBox x:Name="mimaUIpasswordBox" HorizontalAlignment="Left" Password="kaifarenyuan" Margin="220,98,0,0" VerticalAlignment="Top" Width="120"/>
+        <Image x:Name="image" HorizontalAlignment="Left" Height="66" Margin="73,58,0,0" VerticalAlignment="Top" Width="66" Source="/RISClient;component/Ziyuan/yinzhang.png"/>
+        <Button x:Name="dengluUIbutton" Click="dengluUIbutton_Click" Content="登录" HorizontalAlignment="Left" Margin="164,152,0,0" VerticalAlignment="Top" Width="176"/>
+
     </Grid>
 </Controls:MetroWindow>
