@@ -1,0 +1,16 @@
+﻿<Controls:MetroWindow x:Class="RISClient.Yemian.HLA.Jianceshenqingdan.Tianjiashenqingdan"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RISClient.Yemian.HLA.Jianceshenqingdan"
+        mc:Ignorable="d"
+        Title="HSWRIS" Height="600" Width="900" Icon="/RISClient;component/Ziyuan/tubiao.ico" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Label x:Name="label" Content="编号" HorizontalAlignment="Left" Margin="66,10,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="105,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="label1" Content="Label" HorizontalAlignment="Left" Margin="82,112,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Controls:MetroWindow>

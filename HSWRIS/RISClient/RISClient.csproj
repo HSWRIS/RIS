@@ -90,6 +90,11 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Gongju.cs" />
+    <Compile Include="Kongjian\Jichuyemian.cs" />
+    <Compile Include="Kongjian\Liebiaokongzhi.xaml.cs">
+      <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201602030350500_jj.cs" />
     <Compile Include="Migrations\201602030350500_jj.Designer.cs">
       <DependentUpon>201602030350500_jj.cs</DependentUpon>
@@ -101,6 +106,12 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\Shujuku.cs" />
     <Compile Include="Shujuku\Yonghu.cs" />
+    <Compile Include="Yemian\HLA\Jianceshenqingdan\Jianceshenqingdan.xaml.cs">
+      <DependentUpon>Jianceshenqingdan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yemian\HLA\Jianceshenqingdan\Tianjiashenqingdan.xaml.cs">
+      <DependentUpon>Tianjiashenqingdan.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Yemian\Xitong\Denglu.xaml.cs">
       <DependentUpon>Denglu.xaml</DependentUpon>
     </Compile>
@@ -108,7 +119,33 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Yemian\Xitong\Gerenzhongxin.xaml.cs">
+      <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yemian\Xitong\Zhujiemian.xaml.cs">
+      <DependentUpon>Zhujiemian.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Kongjian\Liebiaokongzhi.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\HLA\Jianceshenqingdan\Jianceshenqingdan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\HLA\Jianceshenqingdan\Tianjiashenqingdan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Yemian\Xitong\Denglu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\Xitong\Gerenzhongxin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\Xitong\Zhujiemian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,6 +200,7 @@
     <Resource Include="Ziyuan\tubiao.ico" />
     <Resource Include="Ziyuan\yinzhang.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

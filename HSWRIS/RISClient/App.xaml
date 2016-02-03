@@ -1,7 +1,8 @@
-﻿<Application x:Class="RISClient.App"
+﻿<Application
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:RISClient"
+             xmlns:local="clr-namespace:RISClient" xmlns:Xitong="clr-namespace:RISClient.Yemian.Xitong" x:Class="RISClient.App"
+             ShutdownMode="OnLastWindowClose"
              StartupUri="Yemian/Xitong/Denglu.xaml">
     <Application.Resources>
         <ResourceDictionary>

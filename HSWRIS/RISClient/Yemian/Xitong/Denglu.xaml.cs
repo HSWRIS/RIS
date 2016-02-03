@@ -32,7 +32,9 @@ namespace RISClient.Yemian.Xitong
             {
                 if (shujuku.Yonghu.Where(z=>z.zhanghao.Equals(zhanghaoUItextBox.Text)&&z.mima.Equals(mimaUIpasswordBox.Password)).Count()==1)
                 {
-
+                    var zhuchuangti = new Yemian.Xitong.Zhujiemian();
+                    zhuchuangti.Show();
+                    this.Close();
                 }
                 else
                 {

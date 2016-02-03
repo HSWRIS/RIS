@@ -1,0 +1,34 @@
+﻿<Controls:MetroWindow x:Class="RISClient.Yemian.Xitong.Zhujiemian"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RISClient.Yemian.Xitong"
+        mc:Ignorable="d" Height="600" Width="1000"
+        Title="HSWRIS"  Icon="/RISClient;component/Ziyuan/tubiao.ico" 
+         WindowState="Maximized">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu x:Name="menu" Grid.ColumnSpan="2" Background="#FFF3F3F3"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <TreeView x:Name="treeView">
+                <TreeViewItem Header="个人中心" Name="gerenzhongxinUItreeViewItem" Selected="gerenzhongxinUItreeViewItem_Selected"/>
+                <TreeViewItem Header="临床HLA" IsExpanded="True">
+                    <TreeViewItem Header="检测申请单" Name="linchuanghla_jianceshenqingdanUItreeViewItem" Selected="linchuanghla_jianceshenqingdanUItreeViewItem_Selected"/>
+                </TreeViewItem>
+            </TreeView>
+        </ScrollViewer>
+        <ScrollViewer Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+            <Frame x:Name="jiazaiqiUIframe" Content="" NavigationUIVisibility="Hidden"/>
+        </ScrollViewer>
+
+    </Grid>
+</Controls:MetroWindow>
