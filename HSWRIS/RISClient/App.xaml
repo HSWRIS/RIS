@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:RISClient" xmlns:Xitong="clr-namespace:RISClient.Yemian.Xitong" x:Class="RISClient.App"
              ShutdownMode="OnLastWindowClose"
-             StartupUri="Yemian/Xitong/Denglu.xaml">
+             StartupUri="Yemian/Xitong/Qidongyemian.xaml">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>

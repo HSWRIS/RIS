@@ -23,5 +23,17 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
         {
             InitializeComponent();
         }
+
+        public Shujuku.HLA_shenqingdan shujuyuan
+        {
+            set
+            {
+                shujuyuanUI.DataContext = value;
+            }
+            get
+            {
+                return (Shujuku.HLA_shenqingdan)shujuyuanUI.DataContext;
+            }
+        }
     }
 }

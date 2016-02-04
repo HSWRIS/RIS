@@ -90,6 +90,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Ceshi\Class1.cs" />
     <Compile Include="Gongju.cs" />
     <Compile Include="Kongjian\Jichuyemian.cs" />
     <Compile Include="Kongjian\Liebiaokongzhi.xaml.cs">
@@ -103,7 +104,13 @@
     <Compile Include="Migrations\201602030514272_fw.Designer.cs">
       <DependentUpon>201602030514272_fw.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602040749216_fe.cs" />
+    <Compile Include="Migrations\201602040749216_fe.Designer.cs">
+      <DependentUpon>201602040749216_fe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Shujuku\HLA_shenqingdan.cs" />
+    <Compile Include="Shujuku\Jichuid.cs" />
     <Compile Include="Shujuku\Shujuku.cs" />
     <Compile Include="Shujuku\Yonghu.cs" />
     <Compile Include="Yemian\HLA\Jianceshenqingdan\Jianceshenqingdan.xaml.cs">
@@ -121,6 +128,9 @@
     </Compile>
     <Compile Include="Yemian\Xitong\Gerenzhongxin.xaml.cs">
       <DependentUpon>Gerenzhongxin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yemian\Xitong\Qidongyemian.xaml.cs">
+      <DependentUpon>Qidongyemian.xaml</DependentUpon>
     </Compile>
     <Compile Include="Yemian\Xitong\Zhujiemian.xaml.cs">
       <DependentUpon>Zhujiemian.xaml</DependentUpon>
@@ -142,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Yemian\Xitong\Gerenzhongxin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\Xitong\Qidongyemian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -169,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602030514272_fw.resx">
       <DependentUpon>201602030514272_fw.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602040749216_fe.resx">
+      <DependentUpon>201602040749216_fe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -200,7 +217,9 @@
     <Resource Include="Ziyuan\tubiao.ico" />
     <Resource Include="Ziyuan\yinzhang.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Ziyuan\qidongbeijing.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

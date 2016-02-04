@@ -27,8 +27,12 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
         //添加申请单
         private void shenqingdanliebiaokongzhiUI_Tianjia_Click(object sender, RoutedEventArgs e)
         {
+            var xindan = new Shujuku.HLA_shenqingdan();
             var tianjia = new Tianjiashenqingdan();
+            tianjia.shujuyuan = xindan;
             tianjia.ShowDialog();
+            shujuku.HLA_shenqingdan.Add(xindan);
+            shujuku.SaveChanges();
         }
 
         private void shenqingdanliebiaokongzhiUI_Shanchu_Click(object sender, RoutedEventArgs e)
