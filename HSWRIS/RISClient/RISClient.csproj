@@ -235,13 +235,13 @@
     <Resource Include="Ziyuan\qidongbeijing.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Kongjian\修改必读.txt" />
+    <None Include="Kongjian\修改必读.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Shujuku\修改必读.txt" />
+    <None Include="Shujuku\修改必读.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Migrations\修改必读.txt" />
+    <None Include="Migrations\修改必读.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
