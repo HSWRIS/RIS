@@ -92,6 +92,9 @@
     </ApplicationDefinition>
     <Compile Include="Ceshi\Class1.cs" />
     <Compile Include="Gongju.cs" />
+    <Compile Include="Kongjian\Fenyechaxun.xaml.cs">
+      <DependentUpon>Fenyechaxun.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Kongjian\Jichuyemian.cs" />
     <Compile Include="Kongjian\Liebiaokongzhi.xaml.cs">
       <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
@@ -139,6 +142,10 @@
     <Compile Include="Yemian\Xitong\Zhujiemian.xaml.cs">
       <DependentUpon>Zhujiemian.xaml</DependentUpon>
     </Compile>
+    <Page Include="Kongjian\Fenyechaxun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Kongjian\Liebiaokongzhi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -226,6 +233,15 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Ziyuan\qidongbeijing.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Kongjian\修改必读.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Shujuku\修改必读.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Migrations\修改必读.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
