@@ -6,7 +6,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RISClient.Yemian.Xitong"
         mc:Ignorable="d"
-        Title="Qidongyemian" Height="300" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+        Title="HSWRIS" Height="300" Width="500" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" Icon="/RISClient;component/Ziyuan/tubiao.ico">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/RISClient;component/Ziyuan/qidongbeijing.jpg"/>

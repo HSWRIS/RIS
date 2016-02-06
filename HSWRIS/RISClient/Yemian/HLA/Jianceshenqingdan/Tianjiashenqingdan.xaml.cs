@@ -35,5 +35,17 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
                 return (Shujuku.HLA_shenqingdan)shujuyuanUI.DataContext;
             }
         }
+
+        private async void quedingUIbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if (xingmingUItextBox.Text.Trim().Length==0)
+            {
+                await Gongju.tanchutishi(this,"姓名不能为空！");
+                return;
+            }
+
+            this.DialogResult = true;
+            this.Close();
+        }
     }
 }

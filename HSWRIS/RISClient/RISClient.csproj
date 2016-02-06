@@ -108,6 +108,10 @@
     <Compile Include="Migrations\201602040749216_fe.Designer.cs">
       <DependentUpon>201602040749216_fe.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602061244564_kk.cs" />
+    <Compile Include="Migrations\201602061244564_kk.Designer.cs">
+      <DependentUpon>201602061244564_kk.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\HLA_shenqingdan.cs" />
     <Compile Include="Shujuku\Jichuid.cs" />
@@ -186,6 +190,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602040749216_fe.resx">
       <DependentUpon>201602040749216_fe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602061244564_kk.resx">
+      <DependentUpon>201602061244564_kk.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

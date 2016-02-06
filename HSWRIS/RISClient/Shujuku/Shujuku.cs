@@ -29,7 +29,7 @@
             //HLA 申请单
             var hla_shengqingdan = shujuku.Entity<HLA_shenqingdan>();
             hla_shengqingdan.HasKey(z => z.id);
-            hla_shengqingdan.Property(z => z.xingbie).IsRequired();
+            hla_shengqingdan.Property(z => z.xingming).IsRequired();
             hla_shengqingdan.Property(z => z.bianhao).IsRequired().HasMaxLength(50).HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("Index_bianhao_weiyi") { IsUnique = true }));
 
             //基础ID

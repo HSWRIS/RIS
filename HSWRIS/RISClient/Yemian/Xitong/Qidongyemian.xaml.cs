@@ -24,26 +24,20 @@ namespace RISClient.Yemian.Xitong
         {
             InitializeComponent();
 
-            shujuku = new Shujuku.Shujuku();
-            IsVisibleChanged += Qidongyemian_IsVisibleChanged;
-
-            if (!shujuku.Database.Exists())
-            {
-                MessageBox.Show("链接数据库失败！！","提示");
-                this.Close();
-                return;
-            }
-
             tm = new DispatcherTimer();
             tm.Tick += new EventHandler(chushihua);
-            tm.Interval = TimeSpan.FromSeconds(0.01);
-            tm.Tag = 0;
+#if DEBUG
+            tm.Interval = TimeSpan.FromSeconds(0.005);
+#else
+            tm.Interval = TimeSpan.FromSeconds(0.05);
+#endif
+            tm.Tag = -1;
             tm.Start();
         }
 
         private Shujuku.Shujuku shujuku { set; get; }
 
-        //页面不可见
+        //页面可见变化
         private void Qidongyemian_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
         {
             var kejian = (bool)e.NewValue;
@@ -56,13 +50,32 @@ namespace RISClient.Yemian.Xitong
 
         DispatcherTimer tm { set; get; }
 
-        private  void chushihua(object sender, EventArgs e)
+        private async void chushihua(object sender, EventArgs e)
         {
-
+            tm.Stop();
             tm.Tag = (int)tm.Tag + 1;
             jindutiaoUI.Value = (int)tm.Tag;
 
+            if (jindutiaoUI.Value == 0) jinduxinxiUI.Content = "初始化...";
+
             if (jindutiaoUI.Value == 1)
+            {
+                shujuku = new Shujuku.Shujuku();
+                IsVisibleChanged += Qidongyemian_IsVisibleChanged;
+            }
+
+            if (jindutiaoUI.Value == 10) jinduxinxiUI.Content = "检测数据库连接...";
+
+            if (jindutiaoUI.Value == 11)
+            {
+                if (!shujuku.Database.Exists())
+                {
+                    await Gongju.tanchutishi(this, "链接数据库失败...");
+                    this.Close();
+                }
+            }
+
+            if (jindutiaoUI.Value == 20)
             {
                 jinduxinxiUI.Content = "更新数据库：HLA申请单数据";
                 var ls = shujuku.Jichuid.Where(z => z.biao.Equals("HLA_shenqingdan") && z.lie.Equals("bianhao")).Single();
@@ -79,12 +92,17 @@ namespace RISClient.Yemian.Xitong
                     }
                 }
             }
-            else if (jindutiaoUI.Value == 100)
+
+            if (jindutiaoUI.Value == 100)
             {
-                tm.Stop();
                 var denglu = new Denglu();
                 denglu.Show();
                 this.Close();
+            }
+
+            if (jindutiaoUI.Value < 100)
+            {
+                tm.Start();
             }
         }
     }
