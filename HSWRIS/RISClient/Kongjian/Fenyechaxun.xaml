@@ -7,14 +7,14 @@
              mc:Ignorable="d" >
     <StackPanel Orientation="Horizontal">
         <Label x:Name="label" Content="共"/>
-        <Label x:Name="label_Copy" Content="几"/>
+        <Label x:Name="gongjiyeUIlabel" Content="几"/>
         <Label x:Name="label_Copy1" Content="页。"/>
-        <Button x:Name="button" Content="&lt;&lt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
-        <Button x:Name="button_Copy4" Content="&lt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
-        <Label x:Name="label_Copy2" Content="共"/>
-        <Button x:Name="button_Copy5" Content="&gt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
-        <Button x:Name="button_Copy6" Content="&gt;&gt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
-        <Button x:Name="button_Copy3" Content="查询" Width="75"/>
+        <Button x:Name="shouyeUIbutton" Click="shouyeUIbutton_Click" Content="&lt;&lt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
+        <Button x:Name="qianyeUIbutton" Click="qianyeUIbutton_Click" Content="&lt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
+        <Label x:Name="dangqianyeUIlabel" Content="共"/>
+        <Button x:Name="houyeUIbutton" Click="houyeUIbutton_Click" Content="&gt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
+        <Button x:Name="weiyeUIbutton" Click="weiyeUIbutton_Click" Content="&gt;&gt;"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FF003AFF"/>
+        <Button x:Name="chaxunUIbutton" Click="chaxunUIbutton_Click" Content="查询" Width="75"/>
 
     </StackPanel>
 </UserControl>

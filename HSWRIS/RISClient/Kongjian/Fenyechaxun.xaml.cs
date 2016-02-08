@@ -23,6 +23,86 @@ namespace RISClient.Kongjian
         public Fenyechaxun()
         {
             InitializeComponent();
+            Dangqianye = 1;
+            Gongjiye = 1;
+        }
+
+        public int Gongjiye
+        {
+            set { gongjiyeUIlabel.Content = value; }
+            get { return (int)gongjiyeUIlabel.Content; }
+        }
+        public int Dangqianye
+        {
+            set { dangqianyeUIlabel.Content = value; }
+            get { return (int)dangqianyeUIlabel.Content; }
+        }
+
+        public event RoutedEventHandler Fenye_Click;
+
+        private void shouyeUIbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Fenye_Click != null)
+            {
+                Dangqianye = 1;
+                Fenye_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("此功能没有实现！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void qianyeUIbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Fenye_Click != null)
+            {
+                Dangqianye = Math.Max(1, Dangqianye - 1);
+                Fenye_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("此功能没有实现！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void houyeUIbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Fenye_Click != null)
+            {
+                Dangqianye = Math.Min(Gongjiye, Dangqianye + 1);
+                Fenye_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("此功能没有实现！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void weiyeUIbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Fenye_Click != null)
+            {
+                Dangqianye = Gongjiye;
+                Fenye_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("此功能没有实现！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+        }
+
+        private void chaxunUIbutton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Fenye_Click != null)
+            {
+                Dangqianye = 1;
+                Fenye_Click(sender, e);
+            }
+            else
+            {
+                MessageBox.Show("此功能没有实现！", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }

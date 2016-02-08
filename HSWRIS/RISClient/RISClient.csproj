@@ -96,9 +96,6 @@
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
     <Compile Include="Kongjian\Jichuyemian.cs" />
-    <Compile Include="Kongjian\Liebiaokongzhi.xaml.cs">
-      <DependentUpon>Liebiaokongzhi.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201602030350500_jj.cs" />
     <Compile Include="Migrations\201602030350500_jj.Designer.cs">
       <DependentUpon>201602030350500_jj.cs</DependentUpon>
@@ -143,10 +140,6 @@
       <DependentUpon>Zhujiemian.xaml</DependentUpon>
     </Compile>
     <Page Include="Kongjian\Fenyechaxun.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Kongjian\Liebiaokongzhi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

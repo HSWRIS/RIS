@@ -26,7 +26,7 @@
                 </TreeViewItem>
             </TreeView>
         </ScrollViewer>
-        <ScrollViewer Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto">
+        <ScrollViewer Grid.Column="1" Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
             <Frame x:Name="jiazaiqiUIframe" Content="" NavigationUIVisibility="Hidden" Padding="10,0,10,0"/>
         </ScrollViewer>
 
