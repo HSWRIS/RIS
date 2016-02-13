@@ -42,9 +42,9 @@
                     <MenuItem Header="详细信息" Name="shenqingdanxiangxiUI" />
                     <Separator />
                     <MenuItem Header="添加" Name="shenqingdantianjiaUI" Click="shenqingdantianjiaUI_Click"/>
-                    <MenuItem Header="修改" Name="shenqingdanxiugaiUI"/>
-                    <MenuItem Header="删除" Name="shenqingdanshanchuUI">
-                    </MenuItem>
+                    <MenuItem Header="修改" Name="shenqingdanxiugaiUI" Click="shenqingdanxiugaiUI_Click"/>
+                    <MenuItem Header="删除" Name="shenqingdanshanchuUI" Click="shenqingdanshanchuUI_Click"/>
+
                 </ContextMenu>
             </DataGrid.ContextMenu>
 
