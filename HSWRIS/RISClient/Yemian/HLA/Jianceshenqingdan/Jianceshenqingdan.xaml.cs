@@ -103,6 +103,8 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
             var jieguo = sql.OrderByDescending(z => z.id).Skip(fenyeshenqingdanUI.Dangqianye * 15 - 15).Take(15).ToList();
             shujuyuan_shenqingdan = jieguo;
         }
+
+
         //删除申请单
         private async void shenqingdanshanchuUI_Click(object sender, RoutedEventArgs e)
         {
