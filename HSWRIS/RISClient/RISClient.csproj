@@ -112,8 +112,18 @@
     <Compile Include="Migrations\201602061244564_kk.Designer.cs">
       <DependentUpon>201602061244564_kk.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602150355532_huhu.cs" />
+    <Compile Include="Migrations\201602150355532_huhu.Designer.cs">
+      <DependentUpon>201602150355532_huhu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602150617246_fewfe.cs" />
+    <Compile Include="Migrations\201602150617246_fewfe.Designer.cs">
+      <DependentUpon>201602150617246_fewfe.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\HLA_shenqingdan.cs" />
+    <Compile Include="Shujuku\HLA_weidian.cs" />
+    <Compile Include="Shujuku\HLA_yangbenjieshou.cs" />
     <Compile Include="Shujuku\Jichuid.cs" />
     <Compile Include="Shujuku\Shujuku.cs" />
     <Compile Include="Shujuku\Yonghu.cs" />
@@ -122,6 +132,12 @@
     </Compile>
     <Compile Include="Yemian\HLA\Jianceshenqingdan\Tianjiashenqingdan.xaml.cs">
       <DependentUpon>Tianjiashenqingdan.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yemian\HLA\Jianceshenqingdan\Tianjiayangben.xaml.cs">
+      <DependentUpon>Tianjiayangben.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yemian\HLA\Jianceshenqingdan\Xiugaiweidian.xaml.cs">
+      <DependentUpon>Xiugaiweidian.xaml</DependentUpon>
     </Compile>
     <Compile Include="Yemian\Xitong\Denglu.xaml.cs">
       <DependentUpon>Denglu.xaml</DependentUpon>
@@ -148,6 +164,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Yemian\HLA\Jianceshenqingdan\Tianjiashenqingdan.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\HLA\Jianceshenqingdan\Tianjiayangben.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\HLA\Jianceshenqingdan\Xiugaiweidian.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +217,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602061244564_kk.resx">
       <DependentUpon>201602061244564_kk.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602150355532_huhu.resx">
+      <DependentUpon>201602150355532_huhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602150617246_fewfe.resx">
+      <DependentUpon>201602150617246_fewfe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

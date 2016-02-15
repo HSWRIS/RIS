@@ -31,6 +31,17 @@
             hla_shengqingdan.HasKey(z => z.id);
             hla_shengqingdan.Property(z => z.xingming).IsRequired();
             hla_shengqingdan.Property(z => z.bianhao).IsRequired().HasMaxLength(50).HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("Index_bianhao_weiyi") { IsUnique = true }));
+            hla_shengqingdan.HasMany(z => z.HLA_yangbenjieshous).WithRequired(z => z.HLA_shenqingdan);
+
+            //HLA 样本接受
+            var hla_yangbenjieshou = shujuku.Entity<HLA_yangbenjieshou>();
+            hla_yangbenjieshou.HasKey(z => z.id);
+            hla_yangbenjieshou.Property(z => z.xingming).IsRequired();
+            hla_yangbenjieshou.HasMany(z => z.HLA_weidians).WithRequired(z=>z.HLA_yangbenjieshou);
+
+            //HLA 位点
+            var hla_weidian = shujuku.Entity<HLA_weidian>();
+            hla_weidian.HasKey(z => z.id);
 
             //基础ID
             var jichuid = shujuku.Entity<Jichuid>();
@@ -63,8 +74,8 @@
 
         public virtual DbSet<Yonghu> Yonghu { get; set; }
         public virtual DbSet<HLA_shenqingdan> HLA_shenqingdan { get; set; }
+        public virtual DbSet<HLA_yangbenjieshou> HLA_yangbenjieshou { get; set; }
+        public virtual DbSet<HLA_weidian> HLA_weidian { get; set; }
         public virtual DbSet<Jichuid> Jichuid { get; set; }
     }
-
-
 }

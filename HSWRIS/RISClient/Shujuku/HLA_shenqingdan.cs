@@ -15,6 +15,8 @@ namespace RISClient.Shujuku
         public Nullable<DateTime> chushengriqi { set; get; }
         public string shenfenzhenghao { set; get; }
 
+        public virtual ICollection<HLA_yangbenjieshou> HLA_yangbenjieshous { get; set; }
+
         /// <summary>
         /// 对新添加的，更新编号
         /// </summary>
