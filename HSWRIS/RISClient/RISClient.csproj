@@ -111,6 +111,9 @@
     <Compile Include="Shujuku\Jichuid.cs" />
     <Compile Include="Shujuku\Shujuku.cs" />
     <Compile Include="Shujuku\Yonghu.cs" />
+    <Compile Include="Yemian\HLA\Bubanjilu\Bubanjilu.xaml.cs">
+      <DependentUpon>Bubanjilu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Yemian\HLA\Jianceshenqingdan\Jianceshenqingdan.xaml.cs">
       <DependentUpon>Jianceshenqingdan.xaml</DependentUpon>
     </Compile>
@@ -140,6 +143,10 @@
       <DependentUpon>Zhujiemian.xaml</DependentUpon>
     </Compile>
     <Page Include="Kongjian\Fenyechaxun.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\HLA\Bubanjilu\Bubanjilu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

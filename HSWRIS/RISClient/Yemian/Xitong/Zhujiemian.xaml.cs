@@ -24,15 +24,20 @@ namespace RISClient.Yemian.Xitong
             InitializeComponent();
             App.Current.MainWindow = this;
         }
-
+        //个人中心选择事件
         private void gerenzhongxinUItreeViewItem_Selected(object sender, RoutedEventArgs e)
         {
             jiazaiqiUIframe.Content = new Yemian.Xitong.Gerenzhongxin();
         }
-
+        //临床HLA——检测申请单 选择事件
         private void linchuanghla_jianceshenqingdanUItreeViewItem_Selected(object sender, RoutedEventArgs e)
         {
             jiazaiqiUIframe.Content = new Yemian.HLA.Jianceshenqingdan.Jianceshenqingdan();
+        }
+        //临床HLA——布板记录　选择事件
+        private void linchuanghla_bubanjiluUI_Selected(object sender, RoutedEventArgs e)
+        {
+            jiazaiqiUIframe.Content = new Yemian.HLA.Bubanjilu.Bubanjilu();
         }
     }
 }
