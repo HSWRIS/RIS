@@ -13,6 +13,19 @@ namespace RISClient.Shujuku
         public string xingbie { set; get; }
         public HLA_shenqingdan HLA_shenqingdan { get; set; }
 
-        public virtual ICollection<HLA_weidian> HLA_weidians { set; get; }
+        private ICollection<HLA_weidian> HLA_weidians_;
+
+        public virtual ICollection<HLA_weidian> HLA_weidians
+        {
+            set { HLA_weidians_ = value; }
+            get
+            {
+                if (HLA_weidians_ == null)
+                {
+                    HLA_weidians_ = new List<HLA_weidian>(0);
+                }
+                return HLA_weidians_;
+            }
+        }
     }
 }

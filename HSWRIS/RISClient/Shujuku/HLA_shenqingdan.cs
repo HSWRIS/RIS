@@ -15,7 +15,20 @@ namespace RISClient.Shujuku
         public Nullable<DateTime> chushengriqi { set; get; }
         public string shenfenzhenghao { set; get; }
 
-        public virtual ICollection<HLA_yangbenjieshou> HLA_yangbenjieshous { get; set; }
+
+        private ICollection<HLA_yangbenjieshou> HLA_yangbenjieshous_;
+        public virtual ICollection<HLA_yangbenjieshou> HLA_yangbenjieshous
+        {
+            get
+            {
+                if (HLA_yangbenjieshous_ == null)
+                {
+                    HLA_yangbenjieshous_ = new List<HLA_yangbenjieshou>(0);
+                }
+                return HLA_yangbenjieshous_;
+            }
+            set { HLA_yangbenjieshous_ = value; }
+        }
 
         /// <summary>
         /// 对新添加的，更新编号
@@ -26,7 +39,7 @@ namespace RISClient.Shujuku
             {
                 throw new Exception("业务逻辑错误，只有对新添加的才能调用此方法！");
             }
-            var jichubianhao =(this.id- shujuku.Jichuid.Where(z => z.biao.Equals("HLA_shenqingdan") && z.lie.Equals("bianhao") && z.fenzu.Equals("")).Single().jichuid).ToString();
+            var jichubianhao = (this.id - shujuku.Jichuid.Where(z => z.biao.Equals("HLA_shenqingdan") && z.lie.Equals("bianhao") && z.fenzu.Equals("")).Single().jichuid).ToString();
             var bianhao = "HLA" + DateTime.Now.Year + "00000".Substring(jichubianhao.Length) + jichubianhao;
             this.bianhao = bianhao;
             shujuku.SaveChanges();

@@ -7,13 +7,13 @@ namespace RISClient.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class jj : IMigrationMetadata
+    public sealed partial class fewfe : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(jj));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(fewfe));
         
         string IMigrationMetadata.Id
         {
-            get { return "201602030350500_jj"; }
+            get { return "201602150813470_fewfe"; }
         }
         
         string IMigrationMetadata.Source
