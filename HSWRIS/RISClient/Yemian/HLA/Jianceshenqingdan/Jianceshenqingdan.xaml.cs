@@ -230,10 +230,18 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
             weidianUIdataGrid.ItemsSource = null;
             weidianUIdataGrid.ItemsSource = xuanzhedeyangbenjieshou.HLA_weidians;
         }
+
         //样本接受 选择变化
         private void yangbenjieshouUIdataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            weidianUIdataGrid.ItemsSource = xuanzhedeyangbenjieshou.HLA_weidians;
+            if (xuanzhedeyangbenjieshou == null)
+            {
+                weidianUIdataGrid.ItemsSource = null;
+            }
+            else
+            {
+                weidianUIdataGrid.ItemsSource = xuanzhedeyangbenjieshou.HLA_weidians;
+            }
         }
     }
 }

@@ -60,7 +60,7 @@
             </DataGrid>
 
         </StackPanel>
-        <StackPanel  Name="shenqingdanxiangximokuaiUI" Visibility="Visible">
+        <StackPanel  Name="shenqingdanxiangximokuaiUI" Visibility="Collapsed">
             <Label x:Name="label2_Copy" Content="---- 申请单详细 ----" FontSize="15"/>
             <TabControl x:Name="tabControl" MinHeight="200">
                 <TabItem Header="样本接受">
