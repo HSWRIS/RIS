@@ -23,6 +23,7 @@
                 <TreeViewItem Header="个人中心" Name="gerenzhongxinUItreeViewItem" Selected="gerenzhongxinUItreeViewItem_Selected"/>
                 <TreeViewItem Header="临床HLA" IsExpanded="True">
                     <TreeViewItem Header="检测申请单" Name="linchuanghla_jianceshenqingdanUItreeViewItem" Selected="linchuanghla_jianceshenqingdanUItreeViewItem_Selected"/>
+                    <TreeViewItem Header="布板记录"/>
                 </TreeViewItem>
             </TreeView>
         </ScrollViewer>
