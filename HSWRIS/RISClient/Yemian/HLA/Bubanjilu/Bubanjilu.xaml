@@ -52,14 +52,14 @@
                     <DataGridTextColumn Binding="{Binding banhao}" Header="板号"/>
                     <DataGridTextColumn Binding="{Binding riqi,StringFormat=yyyy-MM-dd}" Header="日期"/>
                     <DataGridTextColumn Binding="{Binding leixing}" Header="类型"/>
-                    <DataGridTextColumn Binding="{Binding hanshu}" Header="行数"/>
+                    <DataGridTextColumn Binding="{Binding hangshu}" Header="行数"/>
                     <DataGridTextColumn Binding="{Binding lieshu}" Header="列数"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
         <StackPanel x:Name="banxiangximokuiaUI" Margin="0,10,0,0">
             <Label x:Name="label2_Copy1" Content="---- 板详细 ----" FontSize="15"/>
-            <DataGrid x:Name="dataGrid" MinHeight="200" >
+            <DataGrid x:Name="banxiangxiUIdataGrid" MinHeight="200" ItemsSource="{Binding}" IsReadOnly="True" >
                 <DataGrid.ContextMenu>
                     <ContextMenu>
                         <MenuItem Header="返回列表" Name="fanhuiliebiaoUI" Click="fanhuiliebiaoUI_Click"/>
@@ -67,21 +67,6 @@
                         <MenuItem Header="布板" />
                     </ContextMenu>
                 </DataGrid.ContextMenu>
-                <DataGrid.Columns>
-                    <DataGridTextColumn Header="行签"/>
-                    <DataGridTextColumn Header="01"/>
-                    <DataGridTextColumn Header="02"/>
-                    <DataGridTextColumn Header="03"/>
-                    <DataGridTextColumn Header="04"/>
-                    <DataGridTextColumn Header="05"/>
-                    <DataGridTextColumn Header="06"/>
-                    <DataGridTextColumn Header="07"/>
-                    <DataGridTextColumn Header="08"/>
-                    <DataGridTextColumn Header="09"/>
-                    <DataGridTextColumn Header="10"/>
-                    <DataGridTextColumn Header="11"/>
-                    <DataGridTextColumn Header="12"/>
-                </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
     </StackPanel>

@@ -33,9 +33,19 @@ namespace RISClient.Yemian.HLA.Bubanjilu
                 return;
             }
 
-            if (leixingUIcomboBox.Text==null)
+            if (leixingUIcomboBox.Text == null)
             {
                 await Gongju.tanchutishi(this, "类型不能为空！");
+                return;
+            }
+            if (lieshuUIcomboBox.Text.Equals("0"))
+            {
+                await Gongju.tanchutishi(this, "列数不能为空！");
+                return;
+            }
+            if (hangshuUIcomboBox.Text.Equals("0"))
+            {
+                await Gongju.tanchutishi(this, "行数不能为空！");
                 return;
             }
 

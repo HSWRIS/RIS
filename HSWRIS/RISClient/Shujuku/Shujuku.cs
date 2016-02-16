@@ -55,7 +55,8 @@
             //HLA 行
             var hla_hang = shujuku.Entity<HLA_hang>();
             hla_hang.HasKey(z => z.id);
-            hla_hang.Property(z => z.hangqian).IsRequired();
+            hla_hang.Property(z => z.Lable).IsRequired();
+            hla_hang.Property(z => z.lieshu).IsRequired();
 
             //基础ID
             var jichuid = shujuku.Entity<Jichuid>();

@@ -25,11 +25,11 @@
         </ComboBox>
         <Label x:Name="label3" Content="行数" HorizontalAlignment="Left" Margin="264,23,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Label x:Name="label4" Content="列数" HorizontalAlignment="Left" Margin="264,54,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red"/>
-        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Text="{Binding hangshu}" Margin="303,23,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="8" HorizontalAlignment="Left" Width="118" IsSelected="True"/>
+        <ComboBox x:Name="hangshuUIcomboBox" HorizontalAlignment="Left" Text="{Binding hangshu}" Margin="303,23,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="8" HorizontalAlignment="Left" Width="118" />
         </ComboBox>
-        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Text="{Binding lieshu}" Margin="303,54,0,0" VerticalAlignment="Top" Width="120">
-            <ComboBoxItem Content="12" HorizontalAlignment="Left" Width="118" IsSelected="True"/>
+        <ComboBox x:Name="lieshuUIcomboBox" HorizontalAlignment="Left" Text="{Binding lieshu}" Margin="303,54,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="12" HorizontalAlignment="Left" Width="118" />
         </ComboBox>
 
     </Grid>

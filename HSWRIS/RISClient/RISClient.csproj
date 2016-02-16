@@ -99,33 +99,9 @@
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
     <Compile Include="Kongjian\Jichuyemian.cs" />
-    <Compile Include="Migrations\201602150813470_fewfe.cs" />
-    <Compile Include="Migrations\201602150813470_fewfe.Designer.cs">
-      <DependentUpon>201602150813470_fewfe.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602150819164_huhu.cs" />
-    <Compile Include="Migrations\201602150819164_huhu.Designer.cs">
-      <DependentUpon>201602150819164_huhu.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602160609401_fewfew.cs" />
-    <Compile Include="Migrations\201602160609401_fewfew.Designer.cs">
-      <DependentUpon>201602160609401_fewfew.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602160616565_fewfew1.cs" />
-    <Compile Include="Migrations\201602160616565_fewfew1.Designer.cs">
-      <DependentUpon>201602160616565_fewfew1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602160753432_f.cs" />
-    <Compile Include="Migrations\201602160753432_f.Designer.cs">
-      <DependentUpon>201602160753432_f.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602160822095_f1.cs" />
-    <Compile Include="Migrations\201602160822095_f1.Designer.cs">
-      <DependentUpon>201602160822095_f1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201602160824162_fewfew2.cs" />
-    <Compile Include="Migrations\201602160824162_fewfew2.Designer.cs">
-      <DependentUpon>201602160824162_fewfew2.cs</DependentUpon>
+    <Compile Include="Migrations\201602160903495_fewfew.cs" />
+    <Compile Include="Migrations\201602160903495_fewfew.Designer.cs">
+      <DependentUpon>201602160903495_fewfew.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\HLA_banxinxi.cs" />
@@ -229,26 +205,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201602150813470_fewfe.resx">
-      <DependentUpon>201602150813470_fewfe.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602150819164_huhu.resx">
-      <DependentUpon>201602150819164_huhu.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602160609401_fewfew.resx">
-      <DependentUpon>201602160609401_fewfew.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602160616565_fewfew1.resx">
-      <DependentUpon>201602160616565_fewfew1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602160753432_f.resx">
-      <DependentUpon>201602160753432_f.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602160822095_f1.resx">
-      <DependentUpon>201602160822095_f1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201602160824162_fewfew2.resx">
-      <DependentUpon>201602160824162_fewfew2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602160903495_fewfew.resx">
+      <DependentUpon>201602160903495_fewfew.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

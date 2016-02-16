@@ -13,7 +13,7 @@ namespace RISClient.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201602160609401_fewfew"; }
+            get { return "201602160903495_fewfew"; }
         }
         
         string IMigrationMetadata.Source

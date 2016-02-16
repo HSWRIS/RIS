@@ -32,6 +32,12 @@ namespace RISClient.Yemian.HLA.Bubanjilu
             set { banliebiaoUIdataGrid.ItemsSource = value; }
             get { return (List<Shujuku.HLA_banxinxi>)banliebiaoUIdataGrid.ItemsSource; }
         }
+        //数据源 板详细
+        private List<Shujuku.HLA_hang> shujuyuan_banxiangxi
+        {
+            set { banxiangxiUIdataGrid.ItemsSource = value; }
+            get { return (List<Shujuku.HLA_hang>)banxiangxiUIdataGrid.ItemsSource; }
+        }
         //选择的 板
         private Shujuku.HLA_banxinxi xuanzedeban
         {
@@ -132,10 +138,12 @@ namespace RISClient.Yemian.HLA.Bubanjilu
                 await Gongju.tanchutishi("请先选择板！");
                 return;
             }
+            xuanzedeban.xianshi(banxiangxiUIdataGrid);
             banliebiaomokuaiUI.Visibility = Visibility.Collapsed;
             banxiangximokuiaUI.Visibility = Visibility.Visible;
         }
 
+        //返回 板列表
         private void fanhuiliebiaoUI_Click(object sender, RoutedEventArgs e)
         {
             banliebiaomokuaiUI.Visibility = Visibility.Visible;
