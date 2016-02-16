@@ -28,5 +28,51 @@
                 </LinearGradientBrush>
             </Grid.Background>
         </Grid>
+        <StackPanel Orientation="Vertical" Name="banliebiaomokuaiUI" Margin="0,10,0,0">
+            <Label x:Name="label2_Copy" Content="---- 板列表 ----" FontSize="15"/>
+            <Grid >
+                <Label x:Name="label1" Content="板号" HorizontalAlignment="Left"  VerticalAlignment="Top"/>
+                <TextBox x:Name="chanxunbanhaoUItextBox" HorizontalAlignment="Left" Height="23"  TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" Margin="39,0,0,0"/>
+                <Label x:Name="label2" Content="日期" HorizontalAlignment="Left" Margin="175,0,0,0" VerticalAlignment="Top"/>
+                <DatePicker Name="chaxunriqiUI" HorizontalAlignment="Left" Margin="214,0,0,0" VerticalAlignment="Top" Width="120"/>
+                <kongjian:Fenyechaxun x:Name="fenyechaxunUI" Fenye_Click="fenyechaxunUI_Fenye_Click" HorizontalAlignment="Right"  VerticalAlignment="Top"/>
+            </Grid>
+            <DataGrid x:Name="banliebiaoUIdataGrid" AutoGenerateColumns="False" IsReadOnly="True" SelectionMode="Single" ItemsSource="{Binding}" MinHeight="200">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Header="详细信息" />
+                        <Separator />
+                        <MenuItem Header="添加" Name="tianjiabanUI" Click="tianjiabanUI_Click"/>
+                        <MenuItem Header="修改" Name="xiugaibanUI" Click="xiugaibanUI_Click"/>
+                        <MenuItem Header="删除" Name="shanchubanUI" Click="shanchubanUI_Click"/>
+
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding banhao}" Header="板号"/>
+                    <DataGridTextColumn Binding="{Binding riqi,StringFormat=yyyy-MM-dd}" Header="日期"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="banxiangximokuiaUI" Margin="0,10,0,0">
+            <Label x:Name="label2_Copy1" Content="---- 板详细 ----" FontSize="15"/>
+            <DataGrid x:Name="dataGrid" MinHeight="200">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="行签"/>
+                    <DataGridTextColumn Header="01"/>
+                    <DataGridTextColumn Header="02"/>
+                    <DataGridTextColumn Header="03"/>
+                    <DataGridTextColumn Header="04"/>
+                    <DataGridTextColumn Header="05"/>
+                    <DataGridTextColumn Header="06"/>
+                    <DataGridTextColumn Header="07"/>
+                    <DataGridTextColumn Header="08"/>
+                    <DataGridTextColumn Header="09"/>
+                    <DataGridTextColumn Header="10"/>
+                    <DataGridTextColumn Header="11"/>
+                    <DataGridTextColumn Header="12"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
     </StackPanel>
 </kongjian:Jichuyemian>

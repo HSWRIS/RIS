@@ -68,7 +68,7 @@ namespace RISClient.Yemian.Xitong
 
             if (jindutiaoUI.Value == 11)
             {
-                if (!shujuku.Database.Exists())
+                if (!shujuku.Database.Exists()||!shujuku.Database.Connection.ConnectionString.Equals("Data Source=127.0.0.1;Initial Catalog=HSWRIS;Persist Security Info=True;User ID=sa;Password=shishi"))
                 {
                     await Gongju.tanchutishi(this, "链接数据库失败...");
                     this.Close();

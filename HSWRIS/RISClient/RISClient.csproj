@@ -107,7 +107,16 @@
     <Compile Include="Migrations\201602150819164_huhu.Designer.cs">
       <DependentUpon>201602150819164_huhu.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602160609401_fewfew.cs" />
+    <Compile Include="Migrations\201602160609401_fewfew.Designer.cs">
+      <DependentUpon>201602160609401_fewfew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602160616565_fewfew1.cs" />
+    <Compile Include="Migrations\201602160616565_fewfew1.Designer.cs">
+      <DependentUpon>201602160616565_fewfew1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Shujuku\HLA_banxinxi.cs" />
     <Compile Include="Shujuku\HLA_shenqingdan.cs" />
     <Compile Include="Shujuku\HLA_weidian.cs" />
     <Compile Include="Shujuku\HLA_yangbenjieshou.cs" />
@@ -116,6 +125,9 @@
     <Compile Include="Shujuku\Yonghu.cs" />
     <Compile Include="Yemian\HLA\Bubanjilu\Bubanjilu.xaml.cs">
       <DependentUpon>Bubanjilu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yemian\HLA\Bubanjilu\Tianjiaban.xaml.cs">
+      <DependentUpon>Tianjiaban.xaml</DependentUpon>
     </Compile>
     <Compile Include="Yemian\HLA\Jianceshenqingdan\Jianceshenqingdan.xaml.cs">
       <DependentUpon>Jianceshenqingdan.xaml</DependentUpon>
@@ -150,6 +162,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Yemian\HLA\Bubanjilu\Bubanjilu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Yemian\HLA\Bubanjilu\Tianjiaban.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -205,6 +221,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602150819164_huhu.resx">
       <DependentUpon>201602150819164_huhu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160609401_fewfew.resx">
+      <DependentUpon>201602160609401_fewfew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160616565_fewfew1.resx">
+      <DependentUpon>201602160616565_fewfew1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
