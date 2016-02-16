@@ -123,5 +123,23 @@ namespace RISClient.Yemian.HLA.Bubanjilu
                 shujuyuan_banliebiao = shujuyuan_banliebiao.ToList();
             }
         }
+
+        //板详细点击
+        private async void banxiangxiUI_Click(object sender, RoutedEventArgs e)
+        {
+            if (xuanzedeban==null)
+            {
+                await Gongju.tanchutishi("请先选择板！");
+                return;
+            }
+            banliebiaomokuaiUI.Visibility = Visibility.Collapsed;
+            banxiangximokuiaUI.Visibility = Visibility.Visible;
+        }
+
+        private void fanhuiliebiaoUI_Click(object sender, RoutedEventArgs e)
+        {
+            banliebiaomokuaiUI.Visibility = Visibility.Visible;
+            banxiangximokuiaUI.Visibility = Visibility.Collapsed;
+        }
     }
 }

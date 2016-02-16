@@ -13,6 +13,24 @@
         <Label x:Name="label1" Content="日期" HorizontalAlignment="Left" Margin="20,54,0,0" VerticalAlignment="Top"/>
         <DatePicker HorizontalAlignment="Left" Margin="65,54,0,0" SelectedDate="{Binding riqi}" VerticalAlignment="Top" Width="120"/>
         <Button x:Name="quedingUIbutton" Click="quedingUIbutton_Click" Content="确定" HorizontalAlignment="Left" Margin="709,534,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label2" Content="类型" HorizontalAlignment="Left" Margin="20,85,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red"/>
+        <ComboBox x:Name="leixingUIcomboBox" Text="{Binding leixing}" HorizontalAlignment="Left" Margin="65,85,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="A" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="B" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="C" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="DRB1" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="DPB1" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="DQB1" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="杂板" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Label x:Name="label3" Content="行数" HorizontalAlignment="Left" Margin="264,23,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Label x:Name="label4" Content="列数" HorizontalAlignment="Left" Margin="264,54,0,0" VerticalAlignment="Top" Background="{x:Null}" Foreground="Red"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Text="{Binding hangshu}" Margin="303,23,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="8" HorizontalAlignment="Left" Width="118" IsSelected="True"/>
+        </ComboBox>
+        <ComboBox x:Name="comboBox1" HorizontalAlignment="Left" Text="{Binding lieshu}" Margin="303,54,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="12" HorizontalAlignment="Left" Width="118" IsSelected="True"/>
+        </ComboBox>
 
     </Grid>
 </Controls:MetroWindow>

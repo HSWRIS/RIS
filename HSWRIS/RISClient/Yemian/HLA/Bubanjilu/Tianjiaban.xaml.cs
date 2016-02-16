@@ -27,11 +27,18 @@ namespace RISClient.Yemian.HLA.Bubanjilu
         //确定 点击事件
         private async void quedingUIbutton_Click(object sender, RoutedEventArgs e)
         {
-            if (banhaoUItextBox.Text.Trim().Length<1)
+            if (banhaoUItextBox.Text.Trim().Length < 1)
             {
                 await Gongju.tanchutishi(this, "板号不能为空！");
                 return;
             }
+
+            if (leixingUIcomboBox.Text==null)
+            {
+                await Gongju.tanchutishi(this, "类型不能为空！");
+                return;
+            }
+
             if (shujuku.HLA_banxinxi.Where(z=>z.banhao.Equals(banhaoUItextBox.Text)).Count()>0&&((Shujuku.HLA_banxinxi)banxinxiUI.DataContext).id<1)
             {
                 await Gongju.tanchutishi(this, "相同板号已经存在！");

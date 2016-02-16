@@ -115,8 +115,21 @@
     <Compile Include="Migrations\201602160616565_fewfew1.Designer.cs">
       <DependentUpon>201602160616565_fewfew1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602160753432_f.cs" />
+    <Compile Include="Migrations\201602160753432_f.Designer.cs">
+      <DependentUpon>201602160753432_f.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602160822095_f1.cs" />
+    <Compile Include="Migrations\201602160822095_f1.Designer.cs">
+      <DependentUpon>201602160822095_f1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602160824162_fewfew2.cs" />
+    <Compile Include="Migrations\201602160824162_fewfew2.Designer.cs">
+      <DependentUpon>201602160824162_fewfew2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\HLA_banxinxi.cs" />
+    <Compile Include="Shujuku\HLA_hang.cs" />
     <Compile Include="Shujuku\HLA_shenqingdan.cs" />
     <Compile Include="Shujuku\HLA_weidian.cs" />
     <Compile Include="Shujuku\HLA_yangbenjieshou.cs" />
@@ -227,6 +240,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602160616565_fewfew1.resx">
       <DependentUpon>201602160616565_fewfew1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160753432_f.resx">
+      <DependentUpon>201602160753432_f.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160822095_f1.resx">
+      <DependentUpon>201602160822095_f1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602160824162_fewfew2.resx">
+      <DependentUpon>201602160824162_fewfew2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

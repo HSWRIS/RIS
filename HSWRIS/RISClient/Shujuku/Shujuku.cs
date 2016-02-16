@@ -47,6 +47,15 @@
             var hla_banxinxi = shujuku.Entity<HLA_banxinxi>();
             hla_banxinxi.HasKey(z => z.id);
             hla_banxinxi.Property(z => z.banhao).IsRequired().HasMaxLength(50).HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute("Index_banhao_weiyi") { IsUnique = true }));
+            hla_banxinxi.Property(z => z.leixing).IsRequired();
+            hla_banxinxi.Property(z => z.hangshu).IsRequired();
+            hla_banxinxi.Property(z => z.lieshu).IsRequired();
+            hla_banxinxi.HasMany(z => z.hangs).WithRequired(z => z.HLA_banxinxi);
+
+            //HLA 行
+            var hla_hang = shujuku.Entity<HLA_hang>();
+            hla_hang.HasKey(z => z.id);
+            hla_hang.Property(z => z.hangqian).IsRequired();
 
             //基础ID
             var jichuid = shujuku.Entity<Jichuid>();
@@ -82,6 +91,7 @@
         public virtual DbSet<HLA_yangbenjieshou> HLA_yangbenjieshou { get; set; }
         public virtual DbSet<HLA_weidian> HLA_weidian { get; set; }
         public virtual DbSet<HLA_banxinxi> HLA_banxinxi { get; set; }
+        public virtual DbSet<HLA_hang> HLA_hang { get; set; }
         public virtual DbSet<Jichuid> Jichuid { get; set; }
     }
 }
