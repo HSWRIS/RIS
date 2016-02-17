@@ -3,7 +3,7 @@ namespace RISClient.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class fewfew : DbMigration
+    public partial class gregre : DbMigration
     {
         public override void Up()
         {
@@ -28,71 +28,26 @@ namespace RISClient.Migrations
                         id = c.Long(nullable: false, identity: true),
                         Lable = c.String(nullable: false),
                         lieshu = c.Int(nullable: false),
-                        C01_id = c.Long(),
-                        C02_id = c.Long(),
-                        C03_id = c.Long(),
-                        C04_id = c.Long(),
-                        C05_id = c.Long(),
-                        C06_id = c.Long(),
-                        C07_id = c.Long(),
-                        C08_id = c.Long(),
-                        C09_id = c.Long(),
-                        C10_id = c.Long(),
-                        C11_id = c.Long(),
-                        C12_id = c.Long(),
-                        C13_id = c.Long(),
-                        C14_id = c.Long(),
-                        C15_id = c.Long(),
-                        C16_id = c.Long(),
-                        C17_id = c.Long(),
-                        C18_id = c.Long(),
-                        C19_id = c.Long(),
-                        C20_id = c.Long(),
                         HLA_banxinxi_id = c.Long(nullable: false),
                     })
                 .PrimaryKey(t => t.id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C01_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C02_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C03_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C04_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C05_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C06_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C07_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C08_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C09_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C10_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C11_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C12_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C13_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C14_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C15_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C16_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C17_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C18_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C19_id)
-                .ForeignKey("dbo.HLA_weidian", t => t.C20_id)
                 .ForeignKey("dbo.HLA_banxinxi", t => t.HLA_banxinxi_id, cascadeDelete: true)
-                .Index(t => t.C01_id)
-                .Index(t => t.C02_id)
-                .Index(t => t.C03_id)
-                .Index(t => t.C04_id)
-                .Index(t => t.C05_id)
-                .Index(t => t.C06_id)
-                .Index(t => t.C07_id)
-                .Index(t => t.C08_id)
-                .Index(t => t.C09_id)
-                .Index(t => t.C10_id)
-                .Index(t => t.C11_id)
-                .Index(t => t.C12_id)
-                .Index(t => t.C13_id)
-                .Index(t => t.C14_id)
-                .Index(t => t.C15_id)
-                .Index(t => t.C16_id)
-                .Index(t => t.C17_id)
-                .Index(t => t.C18_id)
-                .Index(t => t.C19_id)
-                .Index(t => t.C20_id)
                 .Index(t => t.HLA_banxinxi_id);
+            
+            CreateTable(
+                "dbo.HLA_buban",
+                c => new
+                    {
+                        id = c.Long(nullable: false, identity: true),
+                        lie = c.Int(nullable: false),
+                        HLA_weidian_id = c.Long(nullable: false),
+                        HLA_hang_id = c.Long(nullable: false),
+                    })
+                .PrimaryKey(t => t.id)
+                .ForeignKey("dbo.HLA_weidian", t => t.HLA_weidian_id, cascadeDelete: true)
+                .ForeignKey("dbo.HLA_hang", t => t.HLA_hang_id, cascadeDelete: true)
+                .Index(t => t.HLA_weidian_id)
+                .Index(t => t.HLA_hang_id);
             
             CreateTable(
                 "dbo.HLA_weidian",
@@ -166,60 +121,25 @@ namespace RISClient.Migrations
         public override void Down()
         {
             DropForeignKey("dbo.HLA_hang", "HLA_banxinxi_id", "dbo.HLA_banxinxi");
-            DropForeignKey("dbo.HLA_hang", "C20_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C19_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C18_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C17_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C16_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C15_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C14_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C13_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C12_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C11_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C10_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C09_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C08_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C07_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C06_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C05_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C04_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C03_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C02_id", "dbo.HLA_weidian");
-            DropForeignKey("dbo.HLA_hang", "C01_id", "dbo.HLA_weidian");
+            DropForeignKey("dbo.HLA_buban", "HLA_hang_id", "dbo.HLA_hang");
             DropForeignKey("dbo.HLA_weidian", "HLA_yangbenjieshou_id", "dbo.HLA_yangbenjieshou");
             DropForeignKey("dbo.HLA_yangbenjieshou", "HLA_shenqingdan_id", "dbo.HLA_shenqingdan");
+            DropForeignKey("dbo.HLA_buban", "HLA_weidian_id", "dbo.HLA_weidian");
             DropIndex("dbo.Yonghus", "Index_zhanghao_weiyi");
             DropIndex("dbo.Jichuids", "Index_biao_lie_fenzu_weiyi");
             DropIndex("dbo.HLA_shenqingdan", "Index_bianhao_weiyi");
             DropIndex("dbo.HLA_yangbenjieshou", new[] { "HLA_shenqingdan_id" });
             DropIndex("dbo.HLA_weidian", new[] { "HLA_yangbenjieshou_id" });
+            DropIndex("dbo.HLA_buban", new[] { "HLA_hang_id" });
+            DropIndex("dbo.HLA_buban", new[] { "HLA_weidian_id" });
             DropIndex("dbo.HLA_hang", new[] { "HLA_banxinxi_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C20_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C19_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C18_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C17_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C16_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C15_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C14_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C13_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C12_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C11_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C10_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C09_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C08_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C07_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C06_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C05_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C04_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C03_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C02_id" });
-            DropIndex("dbo.HLA_hang", new[] { "C01_id" });
             DropIndex("dbo.HLA_banxinxi", "Index_banhao_weiyi");
             DropTable("dbo.Yonghus");
             DropTable("dbo.Jichuids");
             DropTable("dbo.HLA_shenqingdan");
             DropTable("dbo.HLA_yangbenjieshou");
             DropTable("dbo.HLA_weidian");
+            DropTable("dbo.HLA_buban");
             DropTable("dbo.HLA_hang");
             DropTable("dbo.HLA_banxinxi");
         }

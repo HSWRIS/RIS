@@ -99,12 +99,25 @@
       <DependentUpon>Fenyechaxun.xaml</DependentUpon>
     </Compile>
     <Compile Include="Kongjian\Jichuyemian.cs" />
-    <Compile Include="Migrations\201602160903495_fewfew.cs" />
-    <Compile Include="Migrations\201602160903495_fewfew.Designer.cs">
-      <DependentUpon>201602160903495_fewfew.cs</DependentUpon>
+    <Compile Include="Migrations\201602170525447_gregre.cs" />
+    <Compile Include="Migrations\201602170525447_gregre.Designer.cs">
+      <DependentUpon>201602170525447_gregre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602170529415_fewfew.cs" />
+    <Compile Include="Migrations\201602170529415_fewfew.Designer.cs">
+      <DependentUpon>201602170529415_fewfew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602170541281_few.cs" />
+    <Compile Include="Migrations\201602170541281_few.Designer.cs">
+      <DependentUpon>201602170541281_few.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602170550540_fewfew1.cs" />
+    <Compile Include="Migrations\201602170550540_fewfew1.Designer.cs">
+      <DependentUpon>201602170550540_fewfew1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\HLA_banxinxi.cs" />
+    <Compile Include="Shujuku\HLA_bubanshuoming.cs" />
     <Compile Include="Shujuku\HLA_hang.cs" />
     <Compile Include="Shujuku\HLA_shenqingdan.cs" />
     <Compile Include="Shujuku\HLA_weidian.cs" />
@@ -205,8 +218,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <EmbeddedResource Include="Migrations\201602160903495_fewfew.resx">
-      <DependentUpon>201602160903495_fewfew.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201602170525447_gregre.resx">
+      <DependentUpon>201602170525447_gregre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602170529415_fewfew.resx">
+      <DependentUpon>201602170529415_fewfew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602170541281_few.resx">
+      <DependentUpon>201602170541281_few.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602170550540_fewfew1.resx">
+      <DependentUpon>201602170550540_fewfew1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

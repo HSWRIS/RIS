@@ -15,6 +15,7 @@ namespace RISClient.Shujuku
 
         public HLA_yangbenjieshou HLA_yangbenjieshou { set; get; }
 
+        public virtual ICollection<HLA_bubanshuoming> HLA_bubans { set; get; }
         /// <summary>
         /// 判断两个位点，内容一样
         /// </summary>

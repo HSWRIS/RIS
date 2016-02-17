@@ -60,7 +60,7 @@ namespace RISClient.Yemian.HLA.Bubanjilu
             var tianjia = new Tianjiaban();
             var banxinxi = new Shujuku.HLA_banxinxi();
             banxinxi.riqi = DateTime.Now;
-            tianjia.banxinxiUI.DataContext = banxinxi;
+            tianjia.banxinxi = banxinxi;
             tianjia.shujuku = shujuku;
             var queding = tianjia.ShowDialog();
             if (queding == true)
@@ -81,6 +81,8 @@ namespace RISClient.Yemian.HLA.Bubanjilu
             }
             shujuku.SaveChanges();
             var tianjia = new Tianjiaban();
+            tianjia.hangshuUIcomboBox.IsEnabled = false;
+            tianjia.lieshuUIcomboBox.IsEnabled = false;
             tianjia.banxinxiUI.DataContext = xuanzedeban;
             tianjia.shujuku = shujuku;
             var queding = tianjia.ShowDialog();
@@ -133,7 +135,7 @@ namespace RISClient.Yemian.HLA.Bubanjilu
         //板详细点击
         private async void banxiangxiUI_Click(object sender, RoutedEventArgs e)
         {
-            if (xuanzedeban==null)
+            if (xuanzedeban == null)
             {
                 await Gongju.tanchutishi("请先选择板！");
                 return;
@@ -148,6 +150,20 @@ namespace RISClient.Yemian.HLA.Bubanjilu
         {
             banliebiaomokuaiUI.Visibility = Visibility.Visible;
             banxiangximokuiaUI.Visibility = Visibility.Collapsed;
+        }
+
+        //布板
+        private void bubanUI_Click(object sender, RoutedEventArgs e)
+        {
+            var biaoge = banxiangxiUIdataGrid;
+            if (biaoge.CurrentColumn.Header.ToString().Equals("Lable"))
+            {
+                return;
+            }
+            Console.WriteLine(biaoge.CurrentColumn.Header);
+            Console.WriteLine("222222222222222");
+            Console.WriteLine("222222222222222");
+            Console.WriteLine("222222222222222");
         }
     }
 }

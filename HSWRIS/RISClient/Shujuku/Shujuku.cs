@@ -42,6 +42,7 @@
             //HLA 位点
             var hla_weidian = shujuku.Entity<HLA_weidian>();
             hla_weidian.HasKey(z => z.id);
+            hla_weidian.HasMany(z => z.HLA_bubans).WithOptional(z => z.HLA_weidian);
 
             //HLA 板信息
             var hla_banxinxi = shujuku.Entity<HLA_banxinxi>();
@@ -57,6 +58,32 @@
             hla_hang.HasKey(z => z.id);
             hla_hang.Property(z => z.Lable).IsRequired();
             hla_hang.Property(z => z.lieshu).IsRequired();
+            hla_hang.HasMany(z => z.HLA_bubans).WithRequired(z=>z.HLA_hang);
+            hla_hang.Ignore(z => z.C01);
+            hla_hang.Ignore(z => z.C02);
+            hla_hang.Ignore(z => z.C03);
+            hla_hang.Ignore(z => z.C04);
+            hla_hang.Ignore(z => z.C05);
+            hla_hang.Ignore(z => z.C06);
+            hla_hang.Ignore(z => z.C07);
+            hla_hang.Ignore(z => z.C08);
+            hla_hang.Ignore(z => z.C09);
+            hla_hang.Ignore(z => z.C10);
+            hla_hang.Ignore(z => z.C11);
+            hla_hang.Ignore(z => z.C12);
+            hla_hang.Ignore(z => z.C13);
+            hla_hang.Ignore(z => z.C14);
+            hla_hang.Ignore(z => z.C15);
+            hla_hang.Ignore(z => z.C16);
+            hla_hang.Ignore(z => z.C17);
+            hla_hang.Ignore(z => z.C18);
+            hla_hang.Ignore(z => z.C19);
+            hla_hang.Ignore(z => z.C20);
+
+            //HLA 布板（说明）
+            var HLA_buban = shujuku.Entity<HLA_bubanshuoming>();
+            HLA_buban.HasKey(z => z.id);
+            HLA_buban.Property(z => z.lie).IsRequired();
 
             //基础ID
             var jichuid = shujuku.Entity<Jichuid>();
@@ -84,6 +111,33 @@
                     }
                 }
             }
+            //HLA 板信息
+            if (entityEntry.Entity is HLA_banxinxi)
+            {
+                if (entityEntry.State==EntityState.Modified)
+                {
+                    if (entityEntry.Property("hangshu").IsModified)
+                    {
+                        throw new Exception("业务逻辑错误，行数一旦确定便不能修改！");
+                    }
+                    if (entityEntry.Property("lieshu").IsModified)
+                    {
+                        throw new Exception("业务逻辑错误，列数一旦确定便不能修改！");
+                    }
+                }
+                if (entityEntry.State==EntityState.Added)
+                {
+                    var dangqian = (HLA_banxinxi)entityEntry.Entity;
+                    if (dangqian.hangshu <1)
+                    {
+                        throw new Exception("业务逻辑错误，对于新加的，行数必须设定！");
+                    }
+                    if (dangqian.hangs.Count==0)
+                    {
+                        throw new Exception("业务逻辑错误，对于新加的，行必须设定！");
+                    }
+                }
+            }
             return base.ValidateEntity(entityEntry, items);
         }
 
@@ -92,6 +146,7 @@
         public virtual DbSet<HLA_yangbenjieshou> HLA_yangbenjieshou { get; set; }
         public virtual DbSet<HLA_weidian> HLA_weidian { get; set; }
         public virtual DbSet<HLA_banxinxi> HLA_banxinxi { get; set; }
+        public virtual DbSet<HLA_bubanshuoming> HLA_buban { get; set; }
         public virtual DbSet<HLA_hang> HLA_hang { get; set; }
         public virtual DbSet<Jichuid> Jichuid { get; set; }
     }
