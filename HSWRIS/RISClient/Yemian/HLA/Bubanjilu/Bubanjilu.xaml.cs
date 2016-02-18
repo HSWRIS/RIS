@@ -83,6 +83,7 @@ namespace RISClient.Yemian.HLA.Bubanjilu
             var tianjia = new Tianjiaban();
             tianjia.hangshuUIcomboBox.IsEnabled = false;
             tianjia.lieshuUIcomboBox.IsEnabled = false;
+            tianjia.leixingUIcomboBox.IsEnabled = false;
             tianjia.banxinxiUI.DataContext = xuanzedeban;
             tianjia.shujuku = shujuku;
             var queding = tianjia.ShowDialog();
@@ -148,22 +149,59 @@ namespace RISClient.Yemian.HLA.Bubanjilu
         //返回 板列表
         private void fanhuiliebiaoUI_Click(object sender, RoutedEventArgs e)
         {
+            chaxunyangbenUIdataGrid.ItemsSource = null;
             banliebiaomokuaiUI.Visibility = Visibility.Visible;
             banxiangximokuiaUI.Visibility = Visibility.Collapsed;
         }
 
         //布板
-        private void bubanUI_Click(object sender, RoutedEventArgs e)
+        private async void bubanUI_Click(object sender, RoutedEventArgs e)
         {
-            var biaoge = banxiangxiUIdataGrid;
-            if (biaoge.CurrentColumn.Header.ToString().Equals("Lable"))
+            var weidians = chaxunyangbenUIdataGrid;
+
+            if (chaxunyangbenUIdataGrid.ItemsSource==null)
             {
+                await Gongju.tanchutishi("请先查询位点！");
                 return;
             }
-            Console.WriteLine(biaoge.CurrentColumn.Header);
-            Console.WriteLine("222222222222222");
-            Console.WriteLine("222222222222222");
-            Console.WriteLine("222222222222222");
+
+            if (weidians.SelectedItems.Count == 0)
+            {
+                var queding = await Gongju.tanchutishi_cancel("没有选择位点，布板下列所有位点？");
+                if (queding == MessageDialogResult.Negative)
+                {
+                    return;
+                }
+                else
+                {
+                    chaxunyangbenUIdataGrid.SelectAll();
+                }
+            }
+        ban
+        }
+
+        // 查询样本  布板
+        private void bubanchaxunUI_Fenye_Click(object sender, RoutedEventArgs e)
+        {
+            int meiyetiaoshu = 5;
+            var sql = shujuku.HLA_weidian.AsQueryable();
+            if (guolvyibubanUIcheckBox.IsChecked == true)
+            {
+                sql = sql.Where(z => z.HLA_bubans.Count == 0);
+            }
+            if (!xuanzedeban.leixing.Equals("杂板"))
+            {
+                sql = sql.Where(s => s.weidian.Equals(xuanzedeban.leixing));
+            }
+            bubanchaxunUI.Gongjiye = sql.Count() / meiyetiaoshu + 1;
+            var jieguo = sql.OrderByDescending(z => z.id).Skip(bubanchaxunUI.Dangqianye * meiyetiaoshu - meiyetiaoshu).Take(meiyetiaoshu).ToList();
+            chaxunyangbenUIdataGrid.ItemsSource = jieguo;
+        }
+
+        //布板样本   选择的行
+        private List<Shujuku.HLA_weidian> xuanzedebubanyangben
+        {
+            get { return (List<Shujuku.HLA_weidian>)chaxunyangbenUIdataGrid.SelectedItems; }
         }
     }
 }

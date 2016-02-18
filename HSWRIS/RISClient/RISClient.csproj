@@ -119,6 +119,14 @@
     <Compile Include="Migrations\201602180229459_gewgew.Designer.cs">
       <DependentUpon>201602180229459_gewgew.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201602180540528_fewew.cs" />
+    <Compile Include="Migrations\201602180540528_fewew.Designer.cs">
+      <DependentUpon>201602180540528_fewew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201602180653494_g.cs" />
+    <Compile Include="Migrations\201602180653494_g.Designer.cs">
+      <DependentUpon>201602180653494_g.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Shujuku\HLA_banxinxi.cs" />
     <Compile Include="Shujuku\HLA_bubanshuoming.cs" />
@@ -236,6 +244,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201602180229459_gewgew.resx">
       <DependentUpon>201602180229459_gewgew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602180540528_fewew.resx">
+      <DependentUpon>201602180540528_fewew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201602180653494_g.resx">
+      <DependentUpon>201602180653494_g.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

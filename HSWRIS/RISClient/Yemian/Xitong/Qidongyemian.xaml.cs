@@ -92,6 +92,37 @@ namespace RISClient.Yemian.Xitong
                     }
                 }
             }
+            if (jindutiaoUI.Value == 21)
+            {
+                jinduxinxiUI.Content = "更新数据库：HLA样本数据";
+                var ls = shujuku.Jichuid.Where(z => z.biao.Equals("HLA_yangbenjieshou") && z.lie.Equals("bianhao") && z.fenzu.Equals("SZ")).Single();
+                if (ls.gengxinshijian.Year != DateTime.Now.Year)
+                {
+                    ls.gengxinshijian = DateTime.Now;
+                    if (shujuku.HLA_shenqingdan.Count() == 0)
+                    {
+                        ls.jichuid = 0;
+                    }
+                    else
+                    {
+                        ls.jichuid = shujuku.HLA_yangbenjieshou.Where(z => z.leixing.Equals("SZ")).OrderBy(z => z.id).Last().id;
+                    }
+                }
+
+                ls = shujuku.Jichuid.Where(z => z.biao.Equals("HLA_yangbenjieshou") && z.lie.Equals("bianhao") && z.fenzu.Equals("FY")).Single();
+                if (ls.gengxinshijian.Year != DateTime.Now.Year)
+                {
+                    ls.gengxinshijian = DateTime.Now;
+                    if (shujuku.HLA_shenqingdan.Count() == 0)
+                    {
+                        ls.jichuid = 0;
+                    }
+                    else
+                    {
+                        ls.jichuid = shujuku.HLA_yangbenjieshou.Where(z => z.leixing.Equals("FY")).OrderBy(z => z.id).Last().id;
+                    }
+                }
+            }
 
             if (jindutiaoUI.Value == 100)
             {

@@ -4,20 +4,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.ComponentModel;
 
 namespace RISClient.Shujuku
 {
+
     public class HLA_banxinxi
     {
         public long id { set; get; }
 
         public string banhao { set; get; }
         public Nullable<DateTime> riqi { set; get; }
-        public string leixing { set; get; }
 
 
+        public string leixing { set; get; }             //类型
         public int hangshu { set; get; }                //行数
-
         public int lieshu { set; get; }                 //列数
 
         public int rongliang
@@ -80,7 +81,6 @@ namespace RISClient.Shujuku
                 {
                     lie.Visibility = System.Windows.Visibility.Hidden;
                 }
-
             }
         }
     }

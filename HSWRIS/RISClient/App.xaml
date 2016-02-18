@@ -17,7 +17,7 @@
             </ResourceDictionary.MergedDictionaries>
             <system:Double x:Key="TabItemFontSize">15</system:Double>
 
-            <Style TargetType="{x:Type CheckBox}" BasedOn="{StaticResource MetroCheckBox}">
+            <Style TargetType="CheckBox" BasedOn="{StaticResource MetroCheckBox}">
                 <Setter Property="FontSize" Value="15"/>
             </Style>
         </ResourceDictionary>

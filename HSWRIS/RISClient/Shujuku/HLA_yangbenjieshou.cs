@@ -31,6 +31,8 @@ namespace RISClient.Shujuku
             }
         }
 
+
+        public int yibucishu { get { return HLA_weidians.Sum(z => z.yibucishu); } }
         /// <summary>
         /// 对新添加的，更新编号
         /// </summary>

@@ -125,6 +125,20 @@
                 }
             }
 
+            //HLA 布板说明
+            if (entityEntry.Entity is HLA_bubanshuoming)
+            {
+                if (entityEntry.State==EntityState.Modified)
+                {
+                   var dangqian=(HLA_bubanshuoming)entityEntry.Entity;
+                    if (!dangqian.HLA_hang.HLA_banxinxi.leixing.Equals("杂板") && !dangqian.HLA_hang.HLA_banxinxi.leixing.Equals(dangqian.HLA_weidian.leixing))
+                    {
+                        throw new Exception("非杂板，只能布相同类型的位点！");
+                    }
+                
+                }
+            }
+
             //HLA 板信息
             if (entityEntry.Entity is HLA_banxinxi)
             {
@@ -132,12 +146,26 @@
                 {
                     if (entityEntry.Property("hangshu").IsModified) throw new Exception("业务逻辑错误，行数一旦确定便不能修改！");
                     if (entityEntry.Property("lieshu").IsModified) throw new Exception("业务逻辑错误，列数一旦确定便不能修改！");
+                    if (entityEntry.Property("leixing").IsModified) throw new Exception("业务逻辑错误，类型一旦确定便不能修改！");
                 }
                 if (entityEntry.State == EntityState.Added)
                 {
                     var dangqian = (HLA_banxinxi)entityEntry.Entity;
                     if (dangqian.hangshu < 1) throw new Exception("业务逻辑错误，对于新加的，行数必须设定！");
                     if (dangqian.hangs.Count == 0) throw new Exception("业务逻辑错误，对于新加的，行必须设定！");
+
+                    bool keyi = false;
+                    if (dangqian.leixing.Equals("A")) keyi = true;
+                    if (dangqian.leixing.Equals("B")) keyi = true;
+                    if (dangqian.leixing.Equals("C")) keyi = true;
+                    if (dangqian.leixing.Equals("DPB1")) keyi = true;
+                    if (dangqian.leixing.Equals("DQB1")) keyi = true;
+                    if (dangqian.leixing.Equals("DRB1")) keyi = true;
+                    if (dangqian.leixing.Equals("杂板")) keyi = true;
+                    if (keyi==false)
+                    {
+                        throw new Exception("类型超出范围！");
+                    }
                 }
             }
             return base.ValidateEntity(entityEntry, items);
