@@ -17,6 +17,13 @@
             <ComboBoxItem Content="未知" HorizontalAlignment="Left" Width="118"/>
         </ComboBox>
         <Button x:Name="quedingUIbutton" Click="quedingUIbutton_Click" Content="确定" HorizontalAlignment="Left" Margin="709,534,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label2" Content="类型" HorizontalAlignment="Left" Margin="30,84,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <ComboBox x:Name="leixingUIcomboBox1" Text="{Binding leixing}" HorizontalAlignment="Left" Margin="69,84,0,0" VerticalAlignment="Top" Width="120">
+            <ComboBoxItem Content="SZ" HorizontalAlignment="Left" Width="118"/>
+            <ComboBoxItem Content="FY" HorizontalAlignment="Left" Width="118"/>
+        </ComboBox>
+        <Label x:Name="label3" Content="编号" HorizontalAlignment="Left" Margin="30,111,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="bianhaoUItextBox" HorizontalAlignment="Left" Height="23" Margin="69,111,0,0" TextWrapping="Wrap" Text="{Binding bianhao}" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
 
     </Grid>
 </Controls:MetroWindow>

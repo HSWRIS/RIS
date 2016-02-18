@@ -159,12 +159,14 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
         {
             var tianjia = new Tianjiayangben();
             var xinyangben = new Shujuku.HLA_yangbenjieshou();
+            xinyangben.bianhao = "临时编号";
             tianjia.yangbenjieshouUI.DataContext = xinyangben;
             var queding = tianjia.ShowDialog();
             if (queding == true)
             {
                 xuanzedeshenqingdan.HLA_yangbenjieshous.Add(xinyangben);
                 shujuku.SaveChanges();
+                xinyangben.gengxinbianhao(shujuku);
                 shujuyuan_yangbenjieshou = xuanzedeshenqingdan.HLA_yangbenjieshous.ToList();
             }
         }
@@ -185,6 +187,7 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
             shujuku.SaveChanges();
 
             var tianjia = new Tianjiayangben();
+            tianjia.leixingUIcomboBox1.IsEnabled = false;
             tianjia.yangbenjieshouUI.DataContext = xuanzhedeyangbenjieshou;
             var queding = tianjia.ShowDialog();
             if (queding == true)

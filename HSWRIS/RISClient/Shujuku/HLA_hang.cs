@@ -17,7 +17,7 @@ namespace RISClient.Shujuku
         public HLA_banxinxi HLA_banxinxi { set; get; }
 
 
-        public HLA_bubanshuoming C01 { set { value.lie = 01; HLA_bubans.Remove(HLA_bubans.Where(z => z.lie == 01).SingleOrDefault()); HLA_bubans.Add(value); } get { return HLA_bubans.Where(z => z.lie == 01).SingleOrDefault(); } }
+        public HLA_bubanshuoming C01 { set { HLA_bubans.Where(z => z.lie == 01).Single().HLA_weidian = value.HLA_weidian; } get { return HLA_bubans.Where(z => z.lie == 01).SingleOrDefault(); } }
         public HLA_bubanshuoming C02 { set { value.lie = 02; HLA_bubans.Remove(HLA_bubans.Where(z => z.lie == 02).SingleOrDefault()); HLA_bubans.Add(value); } get { return HLA_bubans.Where(z => z.lie == 02).SingleOrDefault(); } }
         public HLA_bubanshuoming C03 { set { value.lie = 03; HLA_bubans.Remove(HLA_bubans.Where(z => z.lie == 03).SingleOrDefault()); HLA_bubans.Add(value); } get { return HLA_bubans.Where(z => z.lie == 03).SingleOrDefault(); } }
         public HLA_bubanshuoming C04 { set { value.lie = 04; HLA_bubans.Remove(HLA_bubans.Where(z => z.lie == 04).SingleOrDefault()); HLA_bubans.Add(value); } get { return HLA_bubans.Where(z => z.lie == 04).SingleOrDefault(); } }

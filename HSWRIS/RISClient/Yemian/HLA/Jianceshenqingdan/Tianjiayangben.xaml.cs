@@ -31,6 +31,27 @@ namespace RISClient.Yemian.HLA.Jianceshenqingdan
                 await Gongju.tanchutishi(this, "姓名不能为空！");
                 return;
             }
+            if (xingmingUItextBox.Text.Trim().Length == 0)
+            {
+                await Gongju.tanchutishi(this, "姓名不能为空！");
+                return;
+            }
+            if (xingmingUItextBox.Text.Trim().Length == 0)
+            {
+                await Gongju.tanchutishi(this, "姓名不能为空！");
+                return;
+            }
+
+            if (leixingUIcomboBox1.Text.Trim().Length == 0)
+            {
+                await Gongju.tanchutishi(this, "类型不能为空！");
+                return;
+            }
+            if (bianhaoUItextBox.Text.Trim().Length == 0)
+            {
+                await Gongju.tanchutishi(this, "编号不能为空！");
+                return;
+            }
 
             this.DialogResult = true;
             this.Close();

@@ -28,6 +28,25 @@ namespace RISClient.Shujuku
         public int yibushu { get { return hangs.Sum(z => z.yibushu); } }
         public virtual ICollection<HLA_hang> hangs { set; get; }
 
+        //板 初始化
+        public void chushihua()
+        {
+            if (this.hangs == null || this.hangs.Count == 0)
+            {
+                this.hangs = new List<HLA_hang>(0);
+                for (int i = 0; i < this.hangshu; i++)
+                {
+                    var xinhang = new HLA_hang { lieshu = this.lieshu, Lable = ((char)(((int)'A') + i)).ToString() };
+                    xinhang.HLA_bubans = new List<HLA_bubanshuoming>(0);
+                    for (int j = 0; j < this.lieshu; j++)
+                    {
+                        xinhang.HLA_bubans.Add(new HLA_bubanshuoming { lie = j + 1, HLA_hang = xinhang });
+                    }
+                    this.hangs.Add(xinhang);
+                }
+            }
+        }
+
         //datagrid 显示设置
         public void xianshi(DataGrid biaoge)
         {

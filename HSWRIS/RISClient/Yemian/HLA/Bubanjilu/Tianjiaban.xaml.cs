@@ -59,20 +59,8 @@ namespace RISClient.Yemian.HLA.Bubanjilu
                 await Gongju.tanchutishi(this, "相同板号已经存在！");
                 return;
             }
-            if (banxinxi.hangs==null || banxinxi.hangs.Count==0)
-            {
-                banxinxi.hangs = new List<Shujuku.HLA_hang>(0);
-                for (int i = 0; i < banxinxi.hangshu; i++)
-                {
-                    var xinhang = new Shujuku.HLA_hang { lieshu = banxinxi.lieshu, Lable = ((char)(((int)'A') + i)).ToString() };
-                    xinhang.HLA_bubans = new List<Shujuku.HLA_bubanshuoming>(0);
-                    for (int j = 0; j <banxinxi.lieshu ; j++)
-                    {
-                        xinhang.HLA_bubans.Add(new Shujuku.HLA_bubanshuoming { lie=j+1,HLA_hang=xinhang});
-                    }
-                    banxinxi.hangs.Add(xinhang);
-                }
-            }
+
+            banxinxi.chushihua();
            
             this.DialogResult = true;
             this.Close();

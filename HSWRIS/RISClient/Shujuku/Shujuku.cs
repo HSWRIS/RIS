@@ -37,7 +37,9 @@
             var hla_yangbenjieshou = shujuku.Entity<HLA_yangbenjieshou>();
             hla_yangbenjieshou.HasKey(z => z.id);
             hla_yangbenjieshou.Property(z => z.xingming).IsRequired();
-            hla_yangbenjieshou.HasMany(z => z.HLA_weidians).WithRequired(z=>z.HLA_yangbenjieshou);
+            hla_yangbenjieshou.Property(z => z.leixing).IsRequired();
+            hla_yangbenjieshou.Property(z => z.bianhao).IsRequired();
+            hla_yangbenjieshou.HasMany(z => z.HLA_weidians).WithRequired(z => z.HLA_yangbenjieshou);
 
             //HLA 位点
             var hla_weidian = shujuku.Entity<HLA_weidian>();
@@ -58,7 +60,7 @@
             hla_hang.HasKey(z => z.id);
             hla_hang.Property(z => z.Lable).IsRequired();
             hla_hang.Property(z => z.lieshu).IsRequired();
-            hla_hang.HasMany(z => z.HLA_bubans).WithRequired(z=>z.HLA_hang);
+            hla_hang.HasMany(z => z.HLA_bubans).WithRequired(z => z.HLA_hang);
             hla_hang.Ignore(z => z.C01);
             hla_hang.Ignore(z => z.C02);
             hla_hang.Ignore(z => z.C03);
@@ -104,38 +106,38 @@
                     if (entityEntry.Property("bianhao").IsModified)
                     {
                         var ls = entityEntry.Property("bianhao").OriginalValue as string;
-                        if (!ls.Equals("临时编号"))
-                        {
-                            throw new Exception("业务逻辑错误，编号一旦确定便不能修改！");
-                        }
+                        if (!ls.Equals("临时编号")) throw new Exception("业务逻辑错误，编号一旦确定便不能修改！");
                     }
                 }
             }
+
+            //HLA 样本接受
+            if (entityEntry.Entity is HLA_yangbenjieshou)
+            {
+                if (entityEntry.State == EntityState.Modified)
+                {
+                    if (entityEntry.Property("bianhao").IsModified)
+                    {
+                        var ls = entityEntry.Property("bianhao").OriginalValue as string;
+                        if (!ls.Equals("临时编号")) throw new Exception("业务逻辑错误，编号一旦确定便不能修改！");
+                    }
+                    if (entityEntry.Property("leixing").IsModified) throw new Exception("业务逻辑错误，样本类型一旦确定便不能修改！");
+                }
+            }
+
             //HLA 板信息
             if (entityEntry.Entity is HLA_banxinxi)
             {
-                if (entityEntry.State==EntityState.Modified)
+                if (entityEntry.State == EntityState.Modified)
                 {
-                    if (entityEntry.Property("hangshu").IsModified)
-                    {
-                        throw new Exception("业务逻辑错误，行数一旦确定便不能修改！");
-                    }
-                    if (entityEntry.Property("lieshu").IsModified)
-                    {
-                        throw new Exception("业务逻辑错误，列数一旦确定便不能修改！");
-                    }
+                    if (entityEntry.Property("hangshu").IsModified) throw new Exception("业务逻辑错误，行数一旦确定便不能修改！");
+                    if (entityEntry.Property("lieshu").IsModified) throw new Exception("业务逻辑错误，列数一旦确定便不能修改！");
                 }
-                if (entityEntry.State==EntityState.Added)
+                if (entityEntry.State == EntityState.Added)
                 {
                     var dangqian = (HLA_banxinxi)entityEntry.Entity;
-                    if (dangqian.hangshu <1)
-                    {
-                        throw new Exception("业务逻辑错误，对于新加的，行数必须设定！");
-                    }
-                    if (dangqian.hangs.Count==0)
-                    {
-                        throw new Exception("业务逻辑错误，对于新加的，行必须设定！");
-                    }
+                    if (dangqian.hangshu < 1) throw new Exception("业务逻辑错误，对于新加的，行数必须设定！");
+                    if (dangqian.hangs.Count == 0) throw new Exception("业务逻辑错误，对于新加的，行必须设定！");
                 }
             }
             return base.ValidateEntity(entityEntry, items);
