@@ -159,7 +159,7 @@ namespace RISClient.Yemian.HLA.Bubanjilu
         {
             var weidians = chaxunyangbenUIdataGrid;
 
-            if (chaxunyangbenUIdataGrid.ItemsSource==null)
+            if (chaxunyangbenUIdataGrid.ItemsSource == null)
             {
                 await Gongju.tanchutishi("请先查询位点！");
                 return;
@@ -177,7 +177,10 @@ namespace RISClient.Yemian.HLA.Bubanjilu
                     chaxunyangbenUIdataGrid.SelectAll();
                 }
             }
-        ban
+
+            var ls = new List<Shujuku.HLA_weidian>();
+            foreach (var ll in chaxunyangbenUIdataGrid.SelectedItems) ls.Add(ll as Shujuku.HLA_weidian);
+            Shujuku.HLA_banxinxi.buban(banxiangxiUIdataGrid, ls);
         }
 
         // 查询样本  布板

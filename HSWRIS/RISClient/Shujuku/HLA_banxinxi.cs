@@ -83,5 +83,37 @@ namespace RISClient.Shujuku
                 }
             }
         }
+
+        //布板
+        public static async void buban(DataGrid biaoge, List<HLA_weidian> weidians)
+        {
+            if (biaoge.SelectedCells.Where(z => !z.Column.Header.ToString().Equals("Lable")).Count() == 0)
+            {
+                await Gongju.tanchutishi("请选择要布的位置！");
+                return;
+            }
+
+            if (weidians==null ||weidians.Count==0)
+            {
+                await Gongju.tanchutishi("请选择要布的位点！");
+                return;
+            }
+
+            //TODO   检测  选择的  位置  是空的
+
+            if (biaoge.SelectedCells.Count<weidians.Count)
+            {
+                await Gongju.tanchutishi("选择的位置少于选择的位点！");
+                return;
+            }
+
+            foreach (var weidian in weidians)
+            {
+                foreach (var weizhi in biaoge.SelectedCells)
+                {
+                    weizhi.
+                }
+            }
+        }
     }
 }
