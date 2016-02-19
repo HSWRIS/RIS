@@ -22,7 +22,14 @@ namespace RISClient.Shujuku
             }
             else
             {
-                return HLA_weidian.HLA_yangbenjieshou.bianhao;
+                if (HLA_hang.HLA_banxinxi.leixing.Equals("杂板"))
+                {
+                    return HLA_weidian.HLA_yangbenjieshou.bianhao + "(" + HLA_weidian.weidian + ")";
+                }
+                else
+                {
+                    return HLA_weidian.HLA_yangbenjieshou.bianhao;
+                }
             }
         }
     }

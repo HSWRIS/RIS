@@ -180,7 +180,10 @@ namespace RISClient.Yemian.HLA.Bubanjilu
 
             var ls = new List<Shujuku.HLA_weidian>();
             foreach (var ll in chaxunyangbenUIdataGrid.SelectedItems) ls.Add(ll as Shujuku.HLA_weidian);
-            Shujuku.HLA_banxinxi.buban(banxiangxiUIdataGrid, ls);
+            xuanzedeban.buban(banxiangxiUIdataGrid, ls);
+            shujuku.SaveChanges();
+           
+            chaxunyangbenUIdataGrid.ItemsSource=((List<Shujuku.HLA_weidian>)chaxunyangbenUIdataGrid.ItemsSource).ToList();
         }
 
         // 查询样本  布板
@@ -205,6 +208,12 @@ namespace RISClient.Yemian.HLA.Bubanjilu
         private List<Shujuku.HLA_weidian> xuanzedebubanyangben
         {
             get { return (List<Shujuku.HLA_weidian>)chaxunyangbenUIdataGrid.SelectedItems; }
+        }
+
+        //布板 清除 位点
+        private void qingchuUI_Click(object sender, RoutedEventArgs e)
+        {
+            xuanzedeban.qingchuweidian(banxiangxiUIdataGrid);
         }
     }
 }

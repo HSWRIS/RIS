@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 using System.ComponentModel;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace RISClient.Shujuku
 {
@@ -84,24 +85,68 @@ namespace RISClient.Shujuku
             }
         }
 
+        //清除 位点
+        public async void qingchuweidian(DataGrid biaoge)
+        {
+            if (biaoge.SelectedCells.Where(z => z.Column.Header.ToString().Equals("Lable")).Count() > 0)
+            {
+                await Gongju.tanchutishi("行签（Lable）不能清理！");
+                return;
+            }
+
+            var queding = await Gongju.tanchutishi_cancel("确定清理位点？");
+            if (queding == MessageDialogResult.Affirmative)
+            {
+
+                foreach (var weizhi in biaoge.SelectedCells)
+                {
+                    var hang = (HLA_hang)weizhi.Item;
+                    var lie = weizhi.Column.Header.ToString();
+
+                    System.Reflection.PropertyInfo shuxing = hang.GetType().GetProperty(lie);
+                    var shuoming = (HLA_bubanshuoming)shuxing.GetValue(hang, null);
+                    shuoming.HLA_weidian = null;
+
+                }
+                this.xianshi(biaoge);
+            }
+        }
+
         //布板
-        public static async void buban(DataGrid biaoge, List<HLA_weidian> weidians)
+        public async void buban(DataGrid biaoge, List<HLA_weidian> weidians)
         {
             if (biaoge.SelectedCells.Where(z => !z.Column.Header.ToString().Equals("Lable")).Count() == 0)
             {
                 await Gongju.tanchutishi("请选择要布的位置！");
                 return;
             }
+            if (biaoge.SelectedCells.Where(z => z.Column.Header.ToString().Equals("Lable")).Count() > 0)
+            {
+                await Gongju.tanchutishi("不能在行签（Lable）上布点！");
+                return;
+            }
 
-            if (weidians==null ||weidians.Count==0)
+            if (weidians == null || weidians.Count == 0)
             {
                 await Gongju.tanchutishi("请选择要布的位点！");
                 return;
             }
 
-            //TODO   检测  选择的  位置  是空的
+            foreach (var weizhi in biaoge.SelectedCells)
+            {
+                var hang = (HLA_hang)weizhi.Item;
+                var lie = weizhi.Column.Header.ToString();
 
-            if (biaoge.SelectedCells.Count<weidians.Count)
+                System.Reflection.PropertyInfo shuxing = hang.GetType().GetProperty(lie);
+                var shuoming = (HLA_bubanshuoming)shuxing.GetValue(hang, null);
+                if (shuoming.HLA_weidian != null)
+                {
+                    await Gongju.tanchutishi("选的位置上已有样本!");
+                    return;
+                }
+            }
+
+            if (biaoge.SelectedCells.Count < weidians.Count)
             {
                 await Gongju.tanchutishi("选择的位置少于选择的位点！");
                 return;
@@ -111,9 +156,19 @@ namespace RISClient.Shujuku
             {
                 foreach (var weizhi in biaoge.SelectedCells)
                 {
-                    weizhi.
+                    var hang = (HLA_hang)weizhi.Item;
+                    var lie = weizhi.Column.Header.ToString();
+
+                    System.Reflection.PropertyInfo shuxing = hang.GetType().GetProperty(lie);
+                    var shuoming = (HLA_bubanshuoming)shuxing.GetValue(hang, null);
+                    if (shuoming.HLA_weidian == null)
+                    {
+                        shuoming.HLA_weidian = weidian;
+                        break;
+                    }
                 }
             }
+            this.xianshi(biaoge);
         }
     }
 }
